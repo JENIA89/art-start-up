@@ -2,7 +2,7 @@
   "name": "art-start-up",
   "version": "1.0.0",
   "description": "art startup",
-  "main": "index.js",
+  "main": "app.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/app.ts",
@@ -12,8 +12,11 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "yarn test_deploy"
+      "pre-push": "npm test_deploy"
     }
+  },
+  "lint-staged": {
+    "*.{js,ts}": "./node_modules/.bin/eslint"
   },
   "keywords": [
     "art"
